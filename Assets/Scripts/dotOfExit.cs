@@ -20,6 +20,7 @@ public class dotOfExit : MonoBehaviour
     private float fadeDuration = 0.5f;
 
     [SerializeField] AudioSource heartbreak, endmusic;
+    [SerializeField] AudioSource maintheme;
 
     public TMP_Text text; // ссылка на компонент текста
     public float delay = 0.01f; // задержка между появлением символов
@@ -33,6 +34,9 @@ public class dotOfExit : MonoBehaviour
 
     public void GameOver()
     {
+        maintheme.Pause();
+        maintheme.Stop();
+        maintheme.mute = true;
         if (!isRunning) StartCoroutine(nameof(courutine));
     }
     IEnumerator courutine()

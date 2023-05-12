@@ -8,6 +8,7 @@ public class GameMaster : MonoBehaviour
     public int currentTicketNum;
 
     public Text counter;
+    [SerializeField] AudioSource maintheme;
 
     public void Setup()
     {
@@ -21,6 +22,9 @@ public class GameMaster : MonoBehaviour
         if (ticketAmount < currentTicketNum)
         {
             FindObjectOfType<Fireworks>().StartFireworks();
+            maintheme.Pause();
+            maintheme.Stop();
+            maintheme.mute = true;
             Invoke(nameof(EndOfGame), 3f);
         }
 

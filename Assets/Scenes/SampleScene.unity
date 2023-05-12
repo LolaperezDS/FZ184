@@ -203,6 +203,7 @@ MonoBehaviour:
   endGameButton: {fileID: 580722783}
   heartbreak: {fileID: 1780913802}
   endmusic: {fileID: 1907468977}
+  maintheme: {fileID: 1285880667}
   text: {fileID: 1268569241}
   delay: 0.1
 --- !u!114 &1890075
@@ -246,6 +247,7 @@ MonoBehaviour:
   ticketAmount: 0
   currentTicketNum: 0
   counter: {fileID: 1067292423}
+  maintheme: {fileID: 1285880667}
 --- !u!114 &1890078
 MonoBehaviour:
   m_ObjectHideFlags: 0
