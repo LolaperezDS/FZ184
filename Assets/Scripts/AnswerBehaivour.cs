@@ -23,11 +23,12 @@ public class AnswerBehaivour : MonoBehaviour, IPointerClickHandler
 
         if (isCorrect)
         {
+            FindObjectOfType<Healths>().GreenPulse();
             game_master.MakePool();
         }
         else
         {
-            FindObjectOfType<dotOfExit>().GameOver();
+            FindObjectOfType<Healths>().TakeDamage();
         }
     }
 }

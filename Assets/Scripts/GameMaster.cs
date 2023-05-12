@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
@@ -19,7 +20,18 @@ public class GameMaster : MonoBehaviour
         counter.text = currentTicketNum.ToString() + "/" + ticketAmount.ToString();
         if (ticketAmount < currentTicketNum)
         {
-            // win
+            FindObjectOfType<Fireworks>().StartFireworks();
+            Invoke(nameof(EndOfGame), 3f);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
+    private void EndOfGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
